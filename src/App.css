@@ -1,38 +1,407 @@
+/* General Body Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4; /* Slightly off-white for a modern look */
+}
+
+/* App container */
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header Styles */
+.App-header {
+  background-color: #1c1c1c; /* Dark background */
+  color: white;
+  padding: 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-header h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin:0 20px 0 0 ;
+}
+
+nav img {
+  width: 60px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  vertical-align: middle;
+  border-style: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 5px; /* Add space between image and text */
+  padding: 0px;
+  background-color: #1c1c1c; /* Match your theme */
+}
+
+.App-header h1 {
+  font-size: 24px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+nav {
+  display: flex;    
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: #2c738f; /* Match header background */
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav form {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+nav input[type="text"] {
+  padding: 8px 12px;
+  width: 20%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+nav button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* App.css */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.movie-card {
+  width: 200px;
+  text-align: center;
+}
+
+.movie-poster {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.movie-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover; /* Ensures consistent sizing */
+  border-bottom: 1px solid #ddd;
+}
+
+.movie-info {
+  padding: 10px;
+}
+
+.movie-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+.movie-info .green {
+  color: #28a745; /* Green for high ratings */
+}
+
+.movie-info .orange {
+  color: #fd7e14; /* Orange for mid-range ratings */
+}
+
+.movie-info .red {
+  color: #dc3545; /* Red for low ratings */
+}
+
+.overview {
+  padding: 15px;
+  text-align: left;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.overview h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.overview p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.overview a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007BFF; /* Blue for links */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.overview a:hover {
+  background-color: #0056b3;
+}
+
+.play-btn {
+  margin-top: 10px;
+  background-color: #28a745; /* Green for play button */
+}
+
+.play-btn:hover {
+  background-color: #218838;
+}
+
+/* Loading and No Movies Found */
+.loading {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  padding: 20px;
+}
+
+.no-movies {
+  text-align: center;
+  font-size: 20px;
+  color: #888;
+  padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1c1c1c; /* Match header */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .movie-list {
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .movie-item {
+    width: 200px; /* Smaller width for tablets */
   }
+
+  nav input[type="text"] {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-item {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #101010;
+    color: white;
+  }
+  
+  nav form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  nav input[type="text"] {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+  }
+  
+  nav button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .category-filter select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+
+  .App-header {
+    font-size: 22px;
+    padding: 15px;
+  }
+
+  footer {
+    background-color: #101010;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+}  
+
+.category-filter {
+  margin: 20px;
+  text-align: center;
+}
+
+.category-filter select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+
+/* Carousel Section */
+.carousel {
+  position: relative;
+  height: 500px;
+  background-color: #000;
+  color: white;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.featured-details {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+}
+
+.featured-details h2 {
+  font-size: 36px;
+  color: #fff;
+}
+
+.featured-details p {
+  font-size: 16px;
+  color: #ccc;
+  margin: 10px 0;
+}
+
+.watch-btn {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Movie List Section */
+.movie-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 16px;
+  background-color: #2c738f; /* Match the dark theme */
+}
+
+.movie-card {
+  flex: 0 0 160px; /* Fixed width for cards */
+  background-color: #242424; /* Darker card background */
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* Search Form Styling */
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-form input[type="text"] {
+  padding: 8px 12px;
+  width: 250px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.search-form button.search-icon {
+  background: none;
+  border: none;
+  color: #007BFF; /* Icon color */
+  font-size: 18px;
+  position: absolute;
+  right: 10px; /* Position the icon inside the input */
+  cursor: pointer;
+  padding: 0;
+}
+
+.search-form button.search-icon:hover {
+  color: #0056b3; /* Darker blue on hover */
 }
