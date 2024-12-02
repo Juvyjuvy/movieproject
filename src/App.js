@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Header from './components/Header';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import MainContent from './components/MainContent';
@@ -16,7 +15,6 @@ function App() {
   const [genres, setGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState('');
 
-
   const fetchMovies = async (url) => {
     setLoading(true);
     try {
@@ -30,11 +28,9 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     fetchMovies(API_URL);
   }, []);
-
 
   useEffect(() => {
     const fetchGenres = async () => {
@@ -68,7 +64,6 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
       <Nav setQuery={setQuery} setCategory={setSelectedGenre} genres={genres} />
       <MainContent movies={movies} loading={loading} />
       <Footer />

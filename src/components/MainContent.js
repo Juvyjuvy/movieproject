@@ -7,7 +7,7 @@ function MainContent({ movies, loading }) {
 
   return (
     <>
-      {/* Carousel Section */}
+      {}
       <div className="carousel">
         {movies.slice(0, 1).map((movie) => (
           <div key={movie.id} className="featured-movie">
@@ -25,9 +25,9 @@ function MainContent({ movies, loading }) {
         ))}
       </div>
 
-      {/* Suggestions Section */}
+      {}
       <div className="movie-list">
-        {movies.slice(2, 20).map((movie) => (
+        {movies.slice(0, 30).map((movie) => (
           <div key={movie.id} className="movie-card">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
