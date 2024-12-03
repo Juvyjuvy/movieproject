@@ -22,7 +22,7 @@ function Nav({ setQuery, setCategory, genres }) {
   return (
     <nav>
       <form onSubmit={handleSearchSubmit}>
-      <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3Q3Z2c3cmF4cnV2azJydmY3amNiNGY0b2Q2cW1jNXI5Ymhqa3VqYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Pi0upoZ9sk1yoyn8Eb/giphy.webp" alt="Logo" />
+      
         <input
           type="text"
           placeholder="Search for a movie..."

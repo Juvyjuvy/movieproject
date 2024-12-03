@@ -51,36 +51,120 @@ nav img {
   color: white;
 }
 
-
+/* General Styles for nav */
 nav {
-  display: flex;    
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-  background-color: #2c738f; /* Match header background */
+  display: flex;
+  flex-wrap: wrap; /* Allow children to wrap */
+  align-items: center; /* Vertically center children */
+  justify-content: space-between; /* Space out children */
+  gap: 10px; /* Add spacing between elements */
+  padding: 10px 20px;
+  background-color: #2c738f; /* Dark blue background */
   color: white;
 }
 
+/* Form Styling */
 nav form {
-  flex-grow: 1;
-  margin-left: 20px;
+  display: flex; /* Flex container for the form */
+  align-items: center;
+  flex: 1; /* Allow the form to take available space */
+  gap: 10px; /* Space between input and button */
 }
 
 nav input[type="text"] {
-  padding: 8px 12px;
-  width: 20%;
+  flex: 1; /* Make input flexible */
+  padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%; /* Default to full width */
 }
 
 nav button {
+  padding: 8px 16px;
   background-color: #007BFF;
   color: white;
   border: none;
-  padding: 8px 16px;
-  cursor: pointer;
   border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
 }
+
+nav button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Logo Styling */
+nav img {
+  width: 50px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+/* Responsive Styles for Smaller Categories */
+@media (max-width: 768px) {
+  .category-filter {
+    width: auto; /* Let the width adjust automatically */
+    margin: 10px 0; /* Add spacing around it */
+    text-align: center; /* Center align for better appearance */
+  }
+
+  .category-filter select {
+    font-size: 14px; /* Slightly smaller font size */
+    padding: 6px 10px; /* Smaller padding for compact look */
+    width: 100%; /* Full width on smaller devices */
+    max-width: 300px; /* Restrict max width */
+  }
+}
+
+@media (max-width: 480px) {
+  .category-filter {
+    margin: 5px auto; /* Center and reduce margin */
+    width: 100%; /* Full width for the dropdown container */
+  }
+
+  .category-filter select {
+    font-size: 12px; /* Further reduce font size */
+    padding: 5px 8px; /* Compact padding */
+    max-width: 250px; /* Restrict dropdown width further */
+  }
+}
+
+  nav form {
+      width: 100%; /* Full width for form */
+  }
+
+  nav input[type="text"] {
+      width: 10%; /* Ensure input takes full width */
+  }
+
+  .category-filter {
+      width: 100%; /* Full width for dropdown */
+  }
+  
+
+@media (max-width: 480px) {
+  nav {
+      gap: 10px; /* Add more spacing for small screens */
+  }
+
+  nav img {
+      width: 40px; /* Slightly smaller logo */
+  }
+
+  nav button {
+      font-size: 14px; /* Adjust button text size */
+  }
+
+  nav input[type="text"] {
+      font-size: 10px; /* Adjust input font size */
+  }
+
+  .category-filter select {
+      font-size: 10px; /* Adjust dropdown font size */
+  }
+}
+
 
 /* App.css */
 .movie-list {
